@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyszukiwarka filmów</title>
+    <link rel="manifest" href="manifest.json">
+
+    <style>
+        body {
+            font-family: Arial;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        #moviesList div {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #moviesList div:hover {
+            background: #f0f0f0;
+        }
+
+        img {
+            max-width: 200px;
+            margin-top: 10px;
+        }
+
+        #movieDetails {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .small-poster {
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🎬 Wyszukiwarka filmów</h1>
+
+<input type="text" id="movieInput" placeholder="Wpisz tytuł filmu">
+<button id="searchBtn">Szukaj</button>
+
+<p id="error"></p>
+
+<!-- LISTA FILMÓW -->
+<div id="moviesList"></div>
+
+<!-- SZCZEGÓŁY -->
+<div id="movieDetails">
+    <h2 id="title"></h2>
+    <p id="year"></p>
+    <img id="poster" src="" alt="">
+    <p id="plot"></p>
+</div>
+
+<script src="movies.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!-- head to info dla przeglądarki  -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wuszukiwarka filmów</title>
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<!-- body ui w przeglądarce -->
+
+<body>
+    <header>
+        <h1>Uzupełnij dane by przejść do wyszukiwarki filmów</h1>
+    </header>
+    <main>
+        <form action="">
+            <div class="form_box">
+                <label for="name">Imię*: </label>
+                <input type="text" id="name" placeholder="podaj imię" required>
+                <p class="err_message"></p>
+            </div>
+            <div class="form_box">
+                <label for="email">E-mail*: </label>
+                <input type="email" name="" id="email" placeholder="podaj email" required>
+                <p class="err_message"></p>
+            </div>
+            <div class="form_box">
+                <label for="password1">Hasło*: </label>
+                <input type="password" id="password1" name="password1" placeholder="podaj hasło" required>
+                <p class="err_message"></p>
+            </div>
+            <div class="form_box">
+                <label for="password2">Powtórz hasło*: </label>
+                <input type="password" id="password2" name="password2" placeholder="powtórz hasło" required>
+                <p class="err_message"></p>
+            </div>
+            <div class="buttons">
+                <input type="reset" value="Wyczyść" id="reset">
+                <input type="submit" value="Przejdź do wyszukiwarki" id="submit">
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>2026</p>
+    </footer>
+
+    <script src="./script.js"></script>
+
+    <script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log("Service Worker działa"))
+        .catch(err => console.log("Błąd:", err));
+}
+</script>
+</body>
+
+</html>
