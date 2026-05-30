@@ -5,8 +5,10 @@ const moviesList = document.querySelector('#moviesList');
 
 const title = document.querySelector('#title');
 const year = document.querySelector('#year');
+const rating = document.querySelector('#rating');
 const poster = document.querySelector('#poster');
 const plot = document.querySelector('#plot');
+const imdbLink = document.querySelector('#imdbLink');
 
 const error = document.querySelector('#error');
 
@@ -69,8 +71,11 @@ function getMovieDetails(id) {
         .then(data => {
             title.textContent = data.Title;
             year.textContent = "Rok: " + data.Year;
+            rating.innerHTML = `⭐ <strong>${data.imdbRating}/10</strong>`;
             poster.src = data.Poster;
             plot.textContent = data.Plot;
+
+            imdbLink.href = `https://www.imdb.com/title/${data.imdbID}/`;
         })
         .catch(() => {
             error.textContent = "Błąd pobierania szczegółów";
