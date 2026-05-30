@@ -1,11 +1,11 @@
-const CACHE_NAME = "movie-app-v1";
+const CACHE_NAME = "movie-search-app";
 
 const FILES_TO_CACHE = [
-    "/",
-    "/index.html",
-    "/movies.html",
-    "/script.js",
-    "/movies.js"
+    "index.html",
+    "movies.html",
+    "script.js",
+    "movies.js",
+    "manifest.json"
 ];
 
 // instalacja
