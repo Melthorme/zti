@@ -17,7 +17,7 @@ function checkInputsLength(input, minLength) {
     if (input.value.length < minLength) {
         showOrHideErrorMessage(input, `Pole ${input.previousElementSibling.textContent.toLowerCase().replace("*", "").replace(":", "")} powinno zawierać minimum ${minLength} znaki`, "red");
     } else {
-        console.log('OK');
+        showOrHideErrorMessage(input, "", "black");
     }
 }
 
@@ -75,6 +75,12 @@ submitBtn.addEventListener('click', (e) => {
         if (el.textContent !== "") {
             hasError = true;
         }
+    });
+
+    console.log("hasError =", hasError);
+
+    document.querySelectorAll('.err_message').forEach(el => {
+        console.log("Komunikat:", `"${el.textContent}"`);
     });
 
     // jeśli wszystko OK → przejdź dalej
